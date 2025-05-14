@@ -5,5 +5,8 @@ export const usePlayerStore =create((set)=>({
     addPlayer: (newPlayer) => set((state) =>({
         players: [...state.players, newPlayer],
     })),
+    removePlayer: (playerIndex) => set((state) => ({
+        players: state.players.filter((_, index) => index != playerIndex),
+    })),
 }));
 
